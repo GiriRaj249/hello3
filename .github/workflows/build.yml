@@ -6,12 +6,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest@latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Hello World
-        run: echo Hello, world!
 
       - name: Send mail
         if: failure()
@@ -28,6 +25,6 @@ jobs:
     # email body as text
           body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
     # comma-separated string, send email to
-          to: gr66575@gmail.com
+          to: gr66575@gmail.com,gr66575@gmail.com
     # from email name
           from: gitleaks
